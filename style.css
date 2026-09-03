@@ -130,7 +130,7 @@ p{margin:0;}
 /* ---------- 5. Заглушки под фотографии ----------
    Серый прямоугольник с подписью. Если положить реальный файл
    в images/, он подхватится автоматически через --img.
-   Чтобы убрать подписи после загрузки фото — удалите правило .ph::after
+   Чтобы убрать подписи после загрузки фото — удалите правило .ph[data-ph]::after
 ------------------------------------------------------------------ */
 .ph{
   position:relative;
@@ -141,7 +141,7 @@ p{margin:0;}
   border-radius:var(--r);
   overflow:hidden;
 }
-.ph::after{
+.ph[data-ph]::after{
   content:attr(data-ph);
   position:absolute;
   left:10px;
@@ -313,7 +313,7 @@ p{margin:0;}
     linear-gradient(90deg,rgba(11,25,40,.94) 0%,rgba(11,25,40,.80) 42%,rgba(11,25,40,.30) 75%,rgba(11,25,40,.55) 100%),
     linear-gradient(180deg,rgba(11,25,40,.75) 0%,transparent 30%,rgba(11,25,40,.55) 100%);
 }
-.hero__media::after{
+.hero__media[data-ph]::after{
   content:attr(data-ph);
   position:absolute;
   right:14px;bottom:14px;
@@ -428,7 +428,7 @@ p{margin:0;}
   background-size:cover;
   background-position:center;
 }
-.diamond__cell::after{
+.diamond__cell[data-ph]::after{
   content:attr(data-ph);
   position:absolute;
   inset:0;
@@ -479,7 +479,7 @@ p{margin:0;}
   position:absolute;inset:0;
   background:linear-gradient(90deg,rgba(11,25,40,.92) 0%,rgba(11,25,40,.62) 50%,rgba(11,25,40,.45) 100%);
 }
-.offer__media::after{
+.offer__media[data-ph]::after{
   content:attr(data-ph);
   position:absolute;
   left:14px;bottom:14px;
@@ -908,6 +908,15 @@ textarea.input{resize:vertical;min-height:110px;}
   .header__actions .icon-btn{display:none;}
 
   .hero{min-height:auto;padding:calc(var(--hdr) + 46px) 0 56px;}
+  /* на узком экране затемнение мягче и кадр смещён к чану, иначе фото не видно */
+  .hero__media{background-position:72% center;}
+  .hero__media::before{
+    background:linear-gradient(180deg,
+      rgba(11,25,40,.86) 0%,
+      rgba(11,25,40,.58) 38%,
+      rgba(11,25,40,.52) 62%,
+      rgba(11,25,40,.90) 100%);
+  }
   .hero__cta{gap:16px;}
   .hero__cta .btn{width:100%;}
   .chips{gap:8px;}
@@ -932,7 +941,7 @@ textarea.input{resize:vertical;min-height:110px;}
   }
   .diamond__cell:first-child{grid-column:span 2;aspect-ratio:16/10;}
   .diamond__img{transform:none;}
-  .diamond__cell::after{
+  .diamond__cell[data-ph]::after{
     transform:none;
     display:block;
     inset:auto auto 8px 8px;
