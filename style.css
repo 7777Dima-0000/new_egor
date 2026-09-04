@@ -384,8 +384,8 @@ p{margin:0;}
 /* ---------- 9. Блок «Почему мы» ---------- */
 .why{
   display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);
-  gap:56px;
+  grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);
+  gap:40px;
   align-items:center;
 }
 .why__features{
@@ -403,7 +403,7 @@ p{margin:0;}
 .diamond{
   position:relative;
   width:100%;
-  max-width:720px;
+  max-width:780px;
   margin-left:auto;
   aspect-ratio:1;
 }
@@ -877,7 +877,7 @@ textarea.input{resize:vertical;min-height:110px;}
 @media (max-width:1024px){
   .nav{display:none;}
   .why{grid-template-columns:1fr;gap:56px;}
-  .diamond{margin:0 auto;max-width:660px;}
+  .diamond{margin:0 auto;max-width:700px;}
   .offer__grid{grid-template-columns:1fr;gap:36px;}
   .offer__card{max-width:460px;}
   .steps{grid-template-columns:1fr 1fr;}
