@@ -191,7 +191,7 @@ p{margin:0;}
   font-weight:800;
   letter-spacing:.04em;
 }
-.logo__name i{color:var(--gold);font-style:normal;letter-spacing:-.02em;}
+.logo__name i{color:var(--gold);font-style:normal;}
 .logo__sub{
   font-size:9.5px;
   letter-spacing:.26em;
